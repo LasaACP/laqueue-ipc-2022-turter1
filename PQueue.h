@@ -10,31 +10,25 @@
  * 
  * */
 
-struct node
-{
-	int priority;
-	void* data;
-	struct node *link;
-};
-
-
 
 class PQueue
 {
 
 	private:
-		node *front;
+		int start;
+		int end;
+		const static int length = 26;
+		void * queue[length];
 
 	public:
-	PQueue()
-	{
-		front = NULL;
-	}
-		
-	void push(void *item, int priority);
-	void* top();
-	void pop();
-	void display();
-
-
+		PQueue()
+		{
+			start = -1;
+			end = -1;
+		}
+			
+		void push(void *item, int priority);
+		void* top();
+		void pop();
+		void display();
 };
